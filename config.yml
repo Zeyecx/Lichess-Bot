@@ -51,11 +51,11 @@ challenge:                   # incoming challenges
   variants:                  # chess variants to accept (http://lichess.org/variant)
     - standard
     - fromPosition
-#   - antichess
-#   - atomic
+ #   - antichess
+ #   - atomic
     - chess960
-#   - crazyhouse
-    - horde
+ #   - crazyhouse
+ #    - horde
 #   - kingOfTheHill
 #   - racingKings
 #   - threeCheck
