@@ -2,8 +2,8 @@ token: "2Ao3RqDM5PjJYLsM"    # lichess OAuth2 Token
 url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
-  dir: "./engines/"          # dir containing engines, relative to this project
-  name: "stockfish_20011801_x64_modern.exe"        # binary name of the engine to use
+  dir: "./engines/lc0"          # dir containing engines, relative to this project
+  name: "lc0.exe"        # binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   polyglot:
     enabled: false           # activate polyglot book
@@ -37,13 +37,13 @@ engine:                      # engine settings
 #     nalimov: "Nalimov Path"
 #     scorpio: "Scorpio Path"
 #     syzygy: "Syzygy Path"
-  silence_stderr: false      # some engines (yes you, leela) are very noisy
+  silence_stderr: true      # some engines (yes you, leela) are very noisy
 
 abort_time: 120               # time to abort a game in seconds when there is no activity
 fake_think_time: false       # artificially slow down the bot to pretend like it's thinking
 
 challenge:                   # incoming challenges
-  concurrency: 3             # number of games to play simultaneously
+  concurrency: 5             # number of games to play simultaneously
   sort_by: "best"            # possible values: "best", "first"
   accept_bot: true          # accepts challenges coming from other bots
   max_increment: 180         # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
