@@ -3,7 +3,7 @@ url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
   dir: "./engines/"          # dir containing engines, relative to this project
-  name: "network_v11_2.exe"        # binary name of the engine to use
+  name: "stockfish_20011801_x64_modern.exe"        # binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   polyglot:
     enabled: false           # activate polyglot book
