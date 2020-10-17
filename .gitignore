@@ -2,7 +2,7 @@
 *.exe
 
 # Public Key
-config.py
+config.yml
 
 
 # Byte-compiled / optimized / DLL files
