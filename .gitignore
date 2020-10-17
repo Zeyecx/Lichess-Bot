@@ -1,6 +1,9 @@
 # Add Compiler 
 *.exe
 
+# Public Key
+config.yml
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
