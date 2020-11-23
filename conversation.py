@@ -23,7 +23,7 @@ class Conversation():
             game.abort_in(60)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
-            self.send_reply("Network Lc0 Version 11 Set 2")
+            self.send_reply("N-3 Cluster")
             #self.send_reply(line, "{} (lichess-bot v{})".format(self.engine.name(), self.version))
         elif cmd == "howto" and 1==2:
             self.send_reply(line, "How to run your own bot: lichess.org/api#tag/Chess-Bot")
