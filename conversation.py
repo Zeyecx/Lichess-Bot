@@ -17,29 +17,30 @@ class Conversation():
         pass
 
     def command(self, line, game, cmd):
-        if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !name, !dev, !eval, !queue")
-        if cmd == "wait" and game.is_abortable():
-            game.abort_in(60)
-            self.send_reply(line, "Waiting 60 seconds...")
-        elif cmd == "name":
-            self.send_reply("N-3 Cluster")
-            #self.send_reply(line, "{} (lichess-bot v{})".format(self.engine.name(), self.version))
-        elif cmd == "howto" and 1==2:
-            self.send_reply(line, "How to run your own bot: lichess.org/api#tag/Chess-Bot")
-        elif cmd == "eval" and line.room == "spectator":
-            stats = self.engine.get_stats()
-            self.send_reply(line, ", ".join(stats))
-        elif cmd == "dev":
-            self.send_reply("https://twitter.com/Zeyecx or https://lichess.org/@/Zeyecx/ ")
-        elif cmd == "eval":
-            self.send_reply(line, "I don't tell that to my opponent, sorry.")
-        elif cmd == "queue":
-            if self.challengers:
-                challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
-                self.send_reply(line, "Challenge queue: {}".format(challengers))
-            else:
-                self.send_reply(line, "No challenges queued.")
+        if 1 == 2 :
+            if cmd == "commands" or cmd == "help":
+                self.send_reply(line, "Supported commands: !name, !dev, !eval, !queue")
+            if cmd == "wait" and game.is_abortable():
+                game.abort_in(60)
+                self.send_reply(line, "Waiting 60 seconds...")
+            elif cmd == "name":
+                self.send_reply("N-3 Cluster")
+                #self.send_reply(line, "{} (lichess-bot v{})".format(self.engine.name(), self.version))
+            elif cmd == "howto" and 1==2:
+                self.send_reply(line, "How to run your own bot: lichess.org/api#tag/Chess-Bot")
+            elif cmd == "eval" and line.room == "spectator":
+                stats = self.engine.get_stats()
+                self.send_reply(line, ", ".join(stats))
+            elif cmd == "dev":
+                self.send_reply("https://twitter.com/Zeyecx or https://lichess.org/@/Zeyecx/ ")
+            elif cmd == "eval":
+                self.send_reply(line, "I don't tell that to my opponent, sorry.")
+            elif cmd == "queue":
+                if self.challengers:
+                    challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
+                    self.send_reply(line, "Challenge queue: {}".format(challengers))
+                else:
+                    self.send_reply(line, "No challenges queued.")
 
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
